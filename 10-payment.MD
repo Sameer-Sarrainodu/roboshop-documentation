@@ -63,7 +63,7 @@ Setup SystemD Payment Service
 Description=Payment Service
 
 [Service]
-User=root
+User=roboshop
 WorkingDirectory=/app
 // highlight-start
 Environment=CART_HOST=<CART-SERVER-IPADDRESS>
