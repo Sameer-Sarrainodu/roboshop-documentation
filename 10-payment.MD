@@ -42,6 +42,23 @@ curl -L -o /tmp/payment.zip https://roboshop-artifacts.s3.amazonaws.com/payment-
 cd /app 
 unzip /tmp/payment.zip
 ```
+create a file  payment.ini in /app  ( in default payment.ini has uid and gid 1001 when we create a user roboshop uid different in default payment.ini so remove it)
+
+```shell
+[uwsgi]
+wsgi-file = payment.py
+callable = app
+
+master = true
+processes = 1
+lazy-apps = true
+enable-threads = true
+
+socket = 0.0.0.0:8080
+protocol = http
+
+
+```
 
 Every application is developed by development team will have some common softwares that they use as libraries. This application also have the same way of defined dependencies in the application configuration.
 
